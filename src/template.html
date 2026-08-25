@@ -27,11 +27,11 @@
     <section class="hero">
       <div class="hero-copy" id="services">
         <h1>{{SLOGAN}}</h1><p class="hero-intro">{{INTRO}}</p>
-        <div class="hero-actions"><a class="button dark" href="#contact">{{REQUEST}}</a><a class="text-link" href="#service-list">{{EXPLORE}} <span>↓</span></a></div>
+        <div class="hero-actions"><a class="button dark" href="#contact">{{REQUEST}}</a><a class="text-link" href="#service-list">{{EXPLORE}}{{ARROW_DOWN}}</a></div>
       </div>
       <div class="slider-heading" id="service-list"><span>{{SERVICES_LABEL}}</span><span class="slider-hint">{{SWIPE}}</span></div>
       <div class="service-slider" id="slider">{{SERVICE_CARDS}}</div>
-      <div class="slider-controls"><div><button id="previous" aria-label="Previous service">←</button><button id="next" aria-label="Next service">→</button></div><span><strong id="active-slide">01</strong> / 07</span></div>
+      <div class="slider-controls"><div><button id="previous" aria-label="Previous service">{{ARROW_LEFT}}</button><button id="next" aria-label="Next service">{{ARROW_RIGHT}}</button></div><span><strong id="active-slide">01</strong> / 07</span></div>
     </section>
 
     <section class="prices-section">
@@ -51,7 +51,7 @@
         <label><span>{{DATE}}</span><input name="date" type="date"></label>
         <label class="wide"><span>{{MESSAGE}}</span><textarea name="message" rows="4" required></textarea></label>
         <label class="checkbox wide"><input type="checkbox" name="privacy_consent" value="accepted" required><span>{{PRIVACY}}</span></label>
-        <div class="form-submit wide"><button class="button light" type="submit">{{SEND}} <span>↗</span></button><small>{{EMAIL_NOTE}}</small></div>
+        <div class="form-submit wide"><button class="button light" type="submit">{{SEND}}{{ARROW_UP_RIGHT}}</button><small>{{EMAIL_NOTE}}</small></div>
         <p class="form-status wide" id="form-status" role="status" aria-live="polite"></p>
       </form>
     </section>
