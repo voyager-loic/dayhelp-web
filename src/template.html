@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="{{LANG}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>DayHelp — {{SLOGAN}}</title>
+  <meta name="description" content="{{META_DESCRIPTION}}">
+  <meta property="og:title" content="DayHelp">
+  <meta property="og:description" content="{{SLOGAN}}">
+  <meta property="og:image" content="{{SITE_URL}}/assets/og.png">
+  <link rel="alternate" hreflang="de" href="{{SITE_URL}}/de/">
+  <link rel="alternate" hreflang="fr" href="{{SITE_URL}}/fr/">
+  <link rel="alternate" hreflang="it" href="{{SITE_URL}}/it/">
+  <link rel="alternate" hreflang="en" href="{{SITE_URL}}/en/">
+  <link rel="icon" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script type="module" src="/assets/main.js" defer></script>
+</head>
+<body data-recipient="{{RECIPIENT}}">
+  <header class="site-header">
+    <a href="/{{LANG}}/" class="brand" aria-label="DayHelp home">{{MARK}}<span>DayHelp</span></a>
+    <nav class="desktop-nav" aria-label="Main navigation"><a href="#service-list">{{NAV_SERVICES}}</a><a href="#prices">{{NAV_PRICES}}</a><a href="#contact">{{NAV_CONTACT}}</a></nav>
+    <div class="language-switcher" aria-label="Language">{{LANGUAGE_LINKS}}</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy" id="services">
+        <h1>{{SLOGAN}}</h1><p class="hero-intro">{{INTRO}}</p>
+        <div class="hero-actions"><a class="button dark" href="#contact">{{REQUEST}}</a><a class="text-link" href="#service-list">{{EXPLORE}} <span>↓</span></a></div>
+      </div>
+      <div class="slider-heading" id="service-list"><span>{{SERVICES_LABEL}}</span><span class="slider-hint">{{SWIPE}}</span></div>
+      <div class="service-slider" id="slider">{{SERVICE_CARDS}}</div>
+      <div class="slider-controls"><div><button id="previous" aria-label="Previous service">←</button><button id="next" aria-label="Next service">→</button></div><span><strong id="active-slide">01</strong> / 07</span></div>
+    </section>
+
+    <section class="prices-section">
+      <div class="section-lead" id="prices"><p class="eyebrow">{{PRICES_EYEBROW}}</p><h2>{{PRICES_TITLE}}</h2><p>{{PRICES_TEXT}}</p></div>
+      <div class="price-list">{{PRICE_ROWS}}</div>
+    </section>
+
+    <section class="contact-section">
+      <div class="contact-intro" id="contact"><p class="eyebrow">{{CONTACT_EYEBROW}}</p><h2>{{CONTACT_TITLE}}</h2><p>{{CONTACT_TEXT}}</p>{{CONTACT_MARK}}</div>
+      <form class="contact-form" id="contact-form" action="{{FORM_ENDPOINT}}" method="post" data-sending="{{FORM_SENDING}}" data-success="{{FORM_SUCCESS}}" data-error="{{FORM_ERROR}}">
+        <input class="form-honeypot" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="_subject" value="{{FORM_SUBJECT}}">
+        <label><span>{{NAME}}</span><input name="name" required autocomplete="name"></label>
+        <label><span>{{CONTACT}}</span><input name="contact" required autocomplete="email"></label>
+        <label class="wide"><span>{{SERVICE}}</span><select name="service" id="service-select" required><option value="">{{SELECT}}</option>{{SERVICE_OPTIONS}}</select></label>
+        <label><span>{{LOCALITY}}</span><div class="locality-autocomplete"><input name="locality" id="locality-input" required autocomplete="postal-code" role="combobox" aria-autocomplete="list" aria-controls="locality-suggestions" aria-expanded="false"><ul id="locality-suggestions" role="listbox" hidden></ul></div></label>
+        <label><span>{{DATE}}</span><input name="date" type="date"></label>
+        <label class="wide"><span>{{MESSAGE}}</span><textarea name="message" rows="4" required></textarea></label>
+        <label class="checkbox wide"><input type="checkbox" name="privacy_consent" value="accepted" required><span>{{PRIVACY}}</span></label>
+        <div class="form-submit wide"><button class="button light" type="submit">{{SEND}} <span>↗</span></button><small>{{EMAIL_NOTE}}</small></div>
+        <p class="form-status wide" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer><div class="footer-brand"><a href="/{{LANG}}/" class="brand">{{MARK}}<span>DayHelp</span></a><p>{{FOOTER_LINE}}</p></div><div class="footer-links"><a href="/{{LANG}}/impressum/">{{LEGAL}}</a><a href="/{{LANG}}/datenschutz/">{{PRIVACY_LINK}}</a><span>© 2026 DayHelp</span></div></footer>
+</body>
+</html>
